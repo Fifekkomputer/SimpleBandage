@@ -17,12 +17,12 @@ public class BandageItem extends Item {
 
     @Override
     public ItemUseAnimation getUseAnimation(ItemStack stack) {
-        return ItemUseAnimation.EAT;
+        return ItemUseAnimation.NONE;
     }
 
     @Override
     public int getUseDuration(ItemStack stack, LivingEntity entity) {
-        return 40;
+        return 70;
     }
 
     @Override
@@ -42,9 +42,13 @@ public class BandageItem extends Item {
             LivingEntity entity
     ) {
         if (!level.isClientSide()) {
-            entity.heal(2.0F);
+            entity.heal(6.0F);
+
+            if (entity instanceof Player player && !player.getAbilities().instabuild) {
+                stack.shrink(1);
+            }
         }
 
-        return super.finishUsingItem(stack, level, entity);
+        return stack;
     }
 }
