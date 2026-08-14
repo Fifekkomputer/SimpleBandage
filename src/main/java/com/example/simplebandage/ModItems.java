@@ -1,5 +1,6 @@
 package com.example.simplebandage;
 
+import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
@@ -32,7 +33,7 @@ public class ModItems {
     ) {
         T item = factory.apply(properties.setId(key));
 
-        return net.minecraft.core.Registry.register(
+        return Registry.register(
                 BuiltInRegistries.ITEM,
                 key,
                 item
@@ -40,5 +41,6 @@ public class ModItems {
     }
 
     public static void initialize() {
+        // Klasa jest ładowana, więc rejestracja BANDAGE zostanie wykonana.
     }
 }
