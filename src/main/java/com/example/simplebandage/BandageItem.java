@@ -6,7 +6,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.UseAnim;
+import net.minecraft.world.item.ItemUseAnimation;
 import net.minecraft.world.level.Level;
 
 public class BandageItem extends Item {
@@ -16,8 +16,8 @@ public class BandageItem extends Item {
     }
 
     @Override
-    public UseAnim getUseAnimation(ItemStack stack) {
-        return UseAnim.EAT;
+    public ItemUseAnimation getUseAnimation(ItemStack stack) {
+        return ItemUseAnimation.EAT;
     }
 
     @Override
@@ -45,10 +45,6 @@ public class BandageItem extends Item {
             entity.heal(2.0F);
         }
 
-        if (entity instanceof Player player && !player.getAbilities().instabuild) {
-            stack.shrink(1);
-        }
-
-        return stack;
+        return super.finishUsingItem(stack, level, entity);
     }
 }

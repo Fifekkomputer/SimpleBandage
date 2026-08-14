@@ -3,8 +3,8 @@ package com.example.simplebandage;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.Item;
 
 import java.util.function.Function;
@@ -14,7 +14,7 @@ public class ModItems {
     public static final ResourceKey<Item> BANDAGE_KEY =
             ResourceKey.create(
                     Registries.ITEM,
-                    ResourceLocation.fromNamespaceAndPath(
+                    Identifier.fromNamespaceAndPath(
                             Simplebandage.MOD_ID,
                             "bandage"
                     )
@@ -41,6 +41,6 @@ public class ModItems {
     }
 
     public static void initialize() {
-        // Klasa jest ładowana, więc rejestracja BANDAGE zostanie wykonana.
+        // Ładowanie tej klasy powoduje rejestrację BANDAGE.
     }
 }
