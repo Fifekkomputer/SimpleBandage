@@ -14,7 +14,7 @@ public class Simplebandage implements ModInitializer {
 
 					    @Override
 						    public void onInitialize() {
-							        ModItems.register();
+							        ModItems.initialize();
 
 									        LOGGER.info("SimpleBandage initialized!");
 											    }
