@@ -44,7 +44,8 @@ public class BandageItem extends Item {
         if (!level.isClientSide()) {
             entity.heal(6.0F);
 
-            if (entity instanceof Player player && !player.getAbilities().instabuild) {
+            if (entity instanceof Player player
+                    && !player.getAbilities().instabuild) {
                 stack.shrink(1);
             }
         }

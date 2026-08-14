@@ -1,7 +1,9 @@
 package com.example.simplebandage;
 
 import net.fabricmc.api.ModInitializer;
+import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
 import net.minecraft.resources.Identifier;
+import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -9,17 +11,23 @@ public class Simplebandage implements ModInitializer {
 
     public static final String MOD_ID = "simplebandage";
 
-	    public static final Logger LOGGER =
-		            LoggerFactory.getLogger(MOD_ID);
+    public static final Logger LOGGER =
+            LoggerFactory.getLogger(MOD_ID);
 
-					    @Override
-						    public void onInitialize() {
-							        ModItems.initialize();
+    @Override
+    public void onInitialize() {
+        ModItems.initialize();
 
-									        LOGGER.info("SimpleBandage initialized!");
-											    }
+        ItemGroupEvents.modifyEntriesEvent(
+                CreativeModeTabs.INGREDIENTS
+        ).register(entries -> {
+            entries.accept(ModItems.BANDAGE);
+        });
 
-												    public static Identifier id(String path) {
-													        return Identifier.fromNamespaceAndPath(MOD_ID, path);
-															    }
-																}
+        LOGGER.info("SimpleBandage initialized!");
+    }
+
+    public static Identifier id(String path) {
+        return Identifier.fromNamespaceAndPath(MOD_ID, path);
+    }
+}
