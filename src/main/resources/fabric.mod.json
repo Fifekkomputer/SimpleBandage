@@ -1,0 +1,41 @@
+{
+	"schemaVersion": 1,
+	"id": "simplebandage",
+	"version": "${version}",
+	"name": "Simplebandage",
+	"description": "This is an example description! Tell everyone what your mod is about!",
+	"authors": [
+		"Me!"
+	],
+	"contact": {
+		"homepage": "https://fabricmc.net/",
+		"sources": "https://github.com/FabricMC/fabric-example-mod"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/simplebandage/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"com.example.simplebandage.Simplebandage"
+		],
+		"client": [
+			"com.example.simplebandage.client.SimplebandageClient"
+		],
+		"fabric-datagen": [
+			"com.example.simplebandage.client.SimplebandageDataGenerator"
+		]
+	},
+	"mixins": [
+		"simplebandage.mixins.json",
+		{
+			"config": "simplebandage.client.mixins.json",
+			"environment": "client"
+		}
+	],
+	"depends": {
+		"fabricloader": ">=0.19.3",
+		"minecraft": "~1.21.11",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}

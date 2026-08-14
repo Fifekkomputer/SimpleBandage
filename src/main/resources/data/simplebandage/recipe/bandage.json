@@ -1,0 +1,16 @@
+{
+      "type": "minecraft:crafting_shaped",
+        "pattern": [
+            "PW",
+                "PP"
+                  ],
+                    "key": {
+                        "P": "minecraft:paper",
+                            "W": "minecraft:white_wool"
+                              },
+                                "result": {
+                                    "id": "simplebandage:bandage",
+                                        "count": 1
+                                          }
+                                          
+}
