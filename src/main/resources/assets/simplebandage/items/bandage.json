@@ -1,6 +1,6 @@
 {
-    "model": {
-        "type": "minecraft:model",
-            "model": "simplebandage:item/bandage"
-            }
+  "model": {
+    "type": "minecraft:model",
+    "model": "simplebandage:item/bandage"
+  }
 }
