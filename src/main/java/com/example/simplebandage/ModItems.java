@@ -7,8 +7,6 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
 
-import java.util.function.Function;
-
 public class ModItems {
 
     public static final ResourceKey<Item> BANDAGE_KEY =
@@ -20,27 +18,18 @@ public class ModItems {
                     )
             );
 
-    public static final Item BANDAGE = register(
+    public static final Item BANDAGE = Registry.register(
+            BuiltInRegistries.ITEM,
             BANDAGE_KEY,
-            BandageItem::new,
-            new Item.Properties()
+            new BandageItem(
+                    new Item.Properties().setId(BANDAGE_KEY)
+            )
     );
 
-    private static <T extends Item> T register(
-            ResourceKey<Item> key,
-            Function<Item.Properties, T> factory,
-            Item.Properties properties
-    ) {
-        T item = factory.apply(properties.setId(key));
-
-        return Registry.register(
-                BuiltInRegistries.ITEM,
-                key,
-                item
-        );
-    }
-
     public static void initialize() {
-        // Ładowanie tej klasy powoduje rejestrację BANDAGE.
+        Simplebandage.LOGGER.info(
+                "Registered bandage: {}",
+                BuiltInRegistries.ITEM.getKey(BANDAGE)
+        );
     }
 }

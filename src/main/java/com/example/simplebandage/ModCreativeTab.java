@@ -38,6 +38,8 @@ public class ModCreativeTab {
                 SIMPLEBANDAGE_TAB_KEY,
                 SIMPLEBANDAGE_TAB
         );
+
+        Simplebandage.LOGGER.info("Registered SimpleBandage creative tab!");
     }
 }
 
