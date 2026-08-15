@@ -1,4 +1,4 @@
 {
-      "item.simplebandage.bandage": "Bandaż"
-      
+  "item.simplebandage.bandage": "Bandaż",
+  "itemGroup.simplebandage": "SimpleBandage"
 }

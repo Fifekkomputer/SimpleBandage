@@ -22,7 +22,7 @@ public class BandageItem extends Item {
 
     @Override
     public int getUseDuration(ItemStack stack, LivingEntity entity) {
-        return 70;
+        return 40;
     }
 
     @Override
