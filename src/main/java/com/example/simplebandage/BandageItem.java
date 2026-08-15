@@ -17,12 +17,12 @@ public class BandageItem extends Item {
 
     @Override
     public ItemUseAnimation getUseAnimation(ItemStack stack) {
-        return ItemUseAnimation.NONE;
+        return ItemUseAnimation.BRUSH;
     }
 
     @Override
     public int getUseDuration(ItemStack stack, LivingEntity entity) {
-        return 40;
+        return 40; // 2 sekundy
     }
 
     @Override
