@@ -1,6 +1,7 @@
 package com.example.simplebandage;
 
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
+import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -32,7 +33,7 @@ public class ModCreativeTab {
                     .build();
 
     public static void initialize() {
-        BuiltInRegistries.register(
+        Registry.register(
                 BuiltInRegistries.CREATIVE_MODE_TAB,
                 SIMPLEBANDAGE_TAB_KEY,
                 SIMPLEBANDAGE_TAB
